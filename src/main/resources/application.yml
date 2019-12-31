@@ -4,5 +4,20 @@ spring:
     username: root
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
+
+  ldap:
+    # Embedded Spring LDAP
+    embedded:
+      base-dn: dc=packtpub,dc=com
+      credential:
+        username:  uid=admin
+        password: secret
+      ldif: classpath:ldap/ldapschema.ldif
+      port: 8389
+      validation:
+        enabled: false
+
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml
+
+
